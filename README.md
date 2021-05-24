@@ -30,8 +30,10 @@ See: [Install the Azure CLI](https://docs.microsoft.com/de-de/cli/azure/install-
 
 You can verify whether you successfully completed the first challange by running the `Test challange X` VSCode Task.
 
-> You can run your task through Quick Open (Ctrl+P) by typing 'task', Space and the command name. In this case `Test challange 1`
+> 💡 You can run your task through Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>) by typing 'task', Space and the command name. In this case `Test challange 1`
 
 ## Challange 2
+
+### Authenticate?
 
 ## Bonus
