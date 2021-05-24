@@ -26,6 +26,12 @@ See: [Install the Azure CLI](https://docs.microsoft.com/de-de/cli/azure/install-
 
 > 💡 Ensure you have installed the latest version of the Azure CLI
 
+### Verify
+
+You can verify whether you successfully completed the first challange by running the `Test challange X` VSCode Task.
+
+> You can run your task through Quick Open (Ctrl+P) by typing 'task', Space and the command name. In this case `Test challange 1`
+
 ## Challange 2
 
 ## Bonus

@@ -4,15 +4,36 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Challange 1",
+            "label": "Test challange 1",
             "type": "shell",
             "command": "challanges/challange-01.ps1",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "showReuseMessage": false,
+                "panel": "shared"
+            }
         },
         {
-            "label": "Challange 2",
+            "label": "Test challange 2",
             "type": "shell",
-            "command": "challanges/challange-01.ps1",
+            "command": "challanges/challange-02.ps1",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "showReuseMessage": false
+            }
+        },
+
+        {
+            "label": "Test all challanges",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Test challange 1",
+                "Test challange 2"
+            ],
+            "problemMatcher": []
         }
     ]
 }
