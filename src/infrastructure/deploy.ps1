@@ -7,7 +7,7 @@ Get-Content ./attendees.csv | ConvertFrom-Csv | ForEach-Object {
     # Create a resource group.
     az group create --name $resourceGroupName --location $region
     
-    # Assign contributor right for the student
+    # Assign contributor right for the attendees
     az role assignment create --assignee $_.id --role "Contributor" --resource-group $resourceGroupName
 
 }

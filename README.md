@@ -1,11 +1,11 @@
 # Terraform hands-on repository
 
-## Challange 1 - Install Tools
+## Challenge 1 - Install Tools
 
 ### Install Terraform
 
-To use Terraform you will need to install it. HashiCorp distributes Terraform as a pre-compiled binary package.
-In order to pass this challange, you will need to download and install the most recent version of terraform.
+To use Terraform, you will need to install it. HashiCorp distributes Terraform as a pre-compiled binary package.
+To pass this challenge, you will need to download and install the most recent version of Terraform.
 
 > 💡 Make sure that the terraform binary is **up-to-date** and available on your **PATH**. You might have to **restart** vscode.
 
@@ -28,12 +28,22 @@ See: [Install the Azure CLI](https://docs.microsoft.com/de-de/cli/azure/install-
 
 ### Verify
 
-You can verify whether you successfully completed the first challange by running the `Test challange X` VSCode Task.
+You can verify whether you passed the first challenge by running the `Test challenge X` VSCode Task.
 
-> 💡 You can run your task through Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>) by typing 'task', Space and the command name. In this case `Test challange 1`
+> 💡 You can run your task through Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>) by typing 'task', Space and the command name. In this case `Test challenge 1`
 
-## Challange 2
+## Challenge 2
 
-### Authenticate?
+### Authenticate to Azure
+
+To create infrastructure in Azure, Terraform needs to be authenticated against Azure. To sign in to Azure, run the Azure CLI `login` command:
+
+```bash
+az login
+```
+
+Then sign in with your account credentials in the browser.
+
+### Create the initial configuration
 
 ## Bonus

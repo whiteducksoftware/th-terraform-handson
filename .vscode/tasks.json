@@ -4,9 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Test challange 1",
+            "label": "Test challenge 1",
             "type": "shell",
-            "command": "challanges/challange-01.ps1",
+            "command": "challenges/challenge-01.ps1",
             "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
@@ -15,9 +15,9 @@
             }
         },
         {
-            "label": "Test challange 2",
+            "label": "Test challenge 2",
             "type": "shell",
-            "command": "challanges/challange-02.ps1",
+            "command": "challenges/challenge-02.ps1",
             "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
@@ -27,11 +27,11 @@
         },
 
         {
-            "label": "Test all challanges",
+            "label": "Test all challenges",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "Test challange 1",
-                "Test challange 2"
+                "Test challenge 1",
+                "Test challenge 2"
             ],
             "problemMatcher": []
         }
