@@ -5,7 +5,7 @@ function Test-Challange() {
     )
 
     if ($Success) {
-        Write-Host "Success ✔" -ForegroundColor green
+        Write-Host "✔ You passed challange $Challange 💪" -ForegroundColor green
     }
     else {
         Write-Host "❌ The challange $Challange was unfortunately not yet passed 😢" -ForegroundColor red
