@@ -60,9 +60,10 @@ terraform {
   }
 }
 
+# Todo: Change the locals
 locals {
-  initials = "mbr"
-  owner    = "Martin Brandl"
+  initials = "mus"
+  owner    = "Max Mustermann"
 }
 
 provider "azurerm" {
@@ -72,7 +73,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-mbr-terraform-dev"
+  name     = "rg-${local.initials}-terraform-dev"
   location = "germanywestcentral"
 
   tags = {
@@ -80,8 +81,51 @@ resource "azurerm_resource_group" "rg" {
     "purpose" = "Terraform workshop"
   }
 }
+
 ```
 
-###
+Then adjust the `locals` accordingly.
+
+### Initialize the configuration
+
+Initialize terraform by running the following command inside the `src/terraform` directory:
+
+```terraform
+terraform init
+```
+
+The output should look like this:
+
+```
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding hashicorp/azurerm versions matching ">= 2.26.0"...
+- Installing hashicorp/azurerm v2.60.0...
+- Installed hashicorp/azurerm v2.60.0 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```
+
+### Import the existing Resource Group
+
+Terraform is able to import existing infrastructure to bring it under Terraform management. In this hands-on the resource groups are precreated so we have to import them first by running the following command:
+
+```powershell
+terraform import azurerm_resource_group.rg (az group list --query "[?contains(name, '-terraform-dev')].{id:id}" --output tsv)
+```
 
 ## Bonus
