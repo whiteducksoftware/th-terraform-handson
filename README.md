@@ -32,7 +32,7 @@ You can verify whether you passed the first challenge by running the `Test chall
 
 > 💡 You can run your task through Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>) by typing 'task', Space and the command name. In this case `Test challenge 1`
 
-## Challenge 2
+## Challenge 2 - Initial Configuration
 
 ### Authenticate to Azure
 
@@ -45,5 +45,43 @@ az login
 Then sign in with your account credentials in the browser.
 
 ### Create the initial configuration
+
+Inside the `src/terraform` directory, create a new file called `main.tf` and paste the configuration below:
+
+```terraform
+terraform {
+  required_version = ">= 0.15.4"
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">= 2.26"
+    }
+  }
+}
+
+locals {
+  initials = "mbr"
+  owner    = "Martin Brandl"
+}
+
+provider "azurerm" {
+  skip_provider_registration = true
+  features {
+  }
+}
+
+resource "azurerm_resource_group" "rg" {
+  name     = "rg-mbr-terraform-dev"
+  location = "germanywestcentral"
+
+  tags = {
+    "owner"   = local.owner
+    "purpose" = "Terraform workshop"
+  }
+}
+```
+
+###
 
 ## Bonus
