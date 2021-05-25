@@ -148,8 +148,6 @@ terraform apply
 
 The output shows the execution plan again and will prompt you for approval before proceeding. If everything looks fine, type `yes` at the confirmation prompt to proceed.
 
-(az storage account list --query "[?contains(name, '0terraform0dev0stac')]" | ConvertFrom-Json).Length -gt 0
-
 ### Verify Challange 2
 
 Verify whether you passed the second challenge by running the `Test challenge 2` VSCode Task.
@@ -203,4 +201,10 @@ In this challenge, you must provision an **Azure SQL Database**. You will use th
 
 > 💡 You can find an example of how to create an MS SQL Database [here.](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database)
 
+### Verify Challange 5
+
+Verify whether you passed the last challenge by running the `Test challenge 5` VSCode Task.
+
 ## Bonus - Migrate the State to Azure storage account
+
+Here you are on your own 🐱‍👤
