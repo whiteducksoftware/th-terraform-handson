@@ -181,17 +181,17 @@ Verify whether you passed the third challenge by running the `Test challenge 3` 
 
 ### Introduce an input variable
 
-Hardcoding values in your configuration is not a long term pattern for success. In this challange you will introduce input variables and use it within you configuration (`main.tf). Your task is to make the value of the `Purpose`storage account tag variable and pass the value`Demo`to it when you apply the changes with`terraform plan`.
+Hardcoding values in your configuration is not a long-term pattern for success. In this challenge you will introduce input variables and use it within your configuration (`main.tf`). Your task is to make the value of the `Purpose` storage account tag variable and pass the value `Demo` to it when you apply the changes with `terraform plan`.
 
 > 💡 Read more about [Input Variables](https://www.terraform.io/docs/language/values/variables.html) and [Variable Definitions](https://www.terraform.io/docs/language/values/variables.html#variable-definitions-tfvars-files)
 
 ### Introduce an output variable
 
-You also want to declare an output variable `stac_resource_id` that returns the storagte account **resource id**.
+You also want to declare an output variable `stac_resource_id` that returns the storage account **resource id**.
 
 > 💡 Read more about [Output Variables](https://www.terraform.io/docs/language/values/outputs.html)
 
-Don't forget to `apply` your changes before you verify the challange!
+Don't forget to `apply` your changes before you verify the challenge!
 
 ### Verify Challange 4
 
@@ -199,18 +199,8 @@ Verify whether you passed the fourth challenge by running the `Test challenge 4`
 
 ## Challange 5 - functions and random provider
 
-In this challange you must provision an **Azure SQL Database**. You will use the Terraform [random_password provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) to generate the `administrator_login_password`. The name of the `administrator_login` must be in lowercase. To achieve that, you will use the [`lower` string Function](https://www.terraform.io/docs/language/functions/lower.html).
+In this challenge, you must provision an **Azure SQL Database**. You will use the Terraform [random_password provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) to generate the `administrator_login_password`. The name of the `administrator_login` must be in lowercase. To achieve that, you will use the [`lower` string Function](https://www.terraform.io/docs/language/functions/lower.html).
 
-> https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database
+> 💡 You can find an example of how to create an MS SQL Database [here.](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database)
 
-- Run terraform init again
-
-# Ideen
-
-RANDOM Provider z. b. Storage Account
-EVTL. lower function
-
-## Bonus
-
-Migrate the State to Azure
-SQL Database + Key Vault + Connection Strings
+## Bonus - Migrate the State to Azure storage account

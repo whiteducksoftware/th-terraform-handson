@@ -1,39 +1,75 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Test challenge 1",
-            "type": "shell",
-            "command": "pwsh challenges/challenge-01.ps1",
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always",
-                "showReuseMessage": false,
-                "panel": "shared"
-            }
-        },
-        {
-            "label": "Test challenge 2",
-            "type": "shell",
-            "command": "pwsh challenges/challenge-02.ps1",
-            "problemMatcher": [],
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared",
-                "showReuseMessage": false
-            }
-        },
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Test challenge 1",
+      "type": "shell",
+      "command": "pwsh challenges/challenge-01.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "showReuseMessage": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Test challenge 2",
+      "type": "shell",
+      "command": "pwsh challenges/challenge-02.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Test challenge 3",
+      "type": "shell",
+      "command": "pwsh challenges/challenge-03.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Test challenge 4",
+      "type": "shell",
+      "command": "pwsh challenges/challenge-04.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "Test challenge 5",
+      "type": "shell",
+      "command": "pwsh challenges/challenge-05.ps1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
 
-        {
-            "label": "Test all challenges",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "Test challenge 1",
-                "Test challenge 2"
-            ],
-            "problemMatcher": []
-        }
-    ]
+    {
+      "label": "Test all challenges",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Test challenge 1",
+        "Test challenge 2",
+        "Test challenge 3",
+        "Test challenge 4",
+        "Test challenge 5"
+      ],
+      "problemMatcher": []
+    }
+  ]
 }

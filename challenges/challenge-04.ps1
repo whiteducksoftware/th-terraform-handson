@@ -8,7 +8,6 @@ $tags = $stac
 
 Push-Location (Join-Path $PSScriptRoot './../src/terraform')
 $outputPresent = (terraform output stac_resource_id) -match '\/subscriptions\/[\w-]+\/resourceGroups\/[\w-]+\/providers\/Microsoft\.Storage\/storageAccounts'
-(terraform output stac_resource_id)
 Pop-Location
 
 Test-Challenge `
