@@ -1,5 +1,10 @@
 # Terraform hands-on repository
 
+## Prerequisites
+
+- [PowerShell Core](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.1)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
 ## Challenge 1 - Install Tools
 
 ### Install Terraform
