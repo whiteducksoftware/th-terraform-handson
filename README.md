@@ -31,9 +31,9 @@ See: [Install the Azure CLI](https://docs.microsoft.com/de-de/cli/azure/install-
 
 > 💡 Ensure you have installed the latest version of the Azure CLI
 
-### Verify
+### Verify Challange 1
 
-You can verify whether you passed the first challenge by running the `Test challenge X` VSCode Task.
+You can verify whether you passed the first challenge by running the `Test challenge 1` VSCode Task.
 
 > 💡 You can run your task through Quick Open (<kbd>Ctrl</kbd>+<kbd>P</kbd>) by typing 'task', Space and the command name. In this case `Test challenge 1`
 
@@ -150,10 +150,27 @@ The output shows the execution plan again and will prompt you for approval befor
 
 (az storage account list --query "[?contains(name, '0terraform0dev0stac')]" | ConvertFrom-Json).Length -gt 0
 
+### Verify Challange 2
+
+## Challange 3 - Change the configuration
+
+In this challange you will modify the infrastructure you have created previously. Terraform builds an execution plan by comparing your desired state as described in the configuration to the current state, which is saved in the terraform.tfstate file.
+
+### Add a tag to the storage account
+
+Modify the `main.tf` configuration so that the storage account contains the following two [tags](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?WT.mc_id=AZ-MVP-5003203):
+
+- `Environment`: **DEV**
+- `Purpose`: **Handson**
+
+## Challange 4 - Input and Output Variables
+
+Hardcoding values in your configuration is not a long term pattern for success.
+In this challange we will use input variables ..... #### TODO ###############################
+#######################
+
 # Ideen
 
-IDEAS
-DATA
 OUTPUT
 INPUT
 RANDOM Provider z. b. Storage Account
