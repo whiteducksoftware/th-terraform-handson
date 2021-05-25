@@ -85,7 +85,7 @@ resource "azurerm_storage_account" "stac" {
   resource_group_name      = data.azurerm_resource_group.rg.name
   location                 = data.azurerm_resource_group.rg.location
   account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_replication_type = "GRS"
 }
 
 ```
@@ -152,27 +152,55 @@ The output shows the execution plan again and will prompt you for approval befor
 
 ### Verify Challange 2
 
+Verify whether you passed the second challenge by running the `Test challenge 2` VSCode Task.
+
 ## Challange 3 - Change the configuration
 
-In this challange you will modify the infrastructure you have created previously. Terraform builds an execution plan by comparing your desired state as described in the configuration to the current state, which is saved in the terraform.tfstate file.
+In this challange you will modify the infrastructure you have created previously. Terraform builds an execution plan by comparing your desired state as described in the configuration to the current state, which is saved in the `terraform.tfstate` file.
 
-### Add a tag to the storage account
+### Add a tag to the storage account and change the SKU
 
 Modify the `main.tf` configuration so that the storage account contains the following two [tags](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?WT.mc_id=AZ-MVP-5003203):
 
 - `Environment`: **DEV**
 - `Purpose`: **Handson**
 
+> 💡 You will find samples how to create tags within the [Terraform Azure Provider documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs). You can also make use of the auto completion that comes with the Terraform VSCode extension. It is realy simple!
+
+Now change the storage account `account_replication_type` from `GRS` to `LRS`.
+
+### Plan Terraform configuration change and apply it
+
+Like before, use `terraform plan` to see the execution plan. Take your time to study it before you apply the changes using `terraform apply`!
+
+### Verify Challange 3
+
+Verify whether you passed the third challenge by running the `Test challenge 3` VSCode Task.
+
 ## Challange 4 - Input and Output Variables
 
-Hardcoding values in your configuration is not a long term pattern for success.
-In this challange we will use input variables ..... #### TODO ###############################
-#######################
+### Introduce an input variable
+
+Hardcoding values in your configuration is not a long term pattern for success. In this challange you will introduce input variables and use it within you configuration (`main.tf). Your task is to make the value of the `Purpose`storage account tag variable and pass the value`Demo`to it when you apply the changes with`terraform plan`.
+
+> 💡 Read more about [Input Variables](https://www.terraform.io/docs/language/values/variables.html) and [Variable Definitions](https://www.terraform.io/docs/language/values/variables.html#variable-definitions-tfvars-files)
+
+### Introduce an output variable
+
+You also want to declare an output variable `stac_resource_id` that returns the storagte account **resource id**.
+
+> 💡 Read more about [Output Variables](https://www.terraform.io/docs/language/values/outputs.html)
+
+Don't forget to `apply` your changes before you verify the challange!
+
+### Verify Challange 4
+
+Verify whether you passed the fourth challenge by running the `Test challenge 4` VSCode Task.
+
+## Challange 5
 
 # Ideen
 
-OUTPUT
-INPUT
 RANDOM Provider z. b. Storage Account
 EVTL. lower function
 
