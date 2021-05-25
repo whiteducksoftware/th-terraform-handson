@@ -197,7 +197,13 @@ Don't forget to `apply` your changes before you verify the challange!
 
 Verify whether you passed the fourth challenge by running the `Test challenge 4` VSCode Task.
 
-## Challange 5
+## Challange 5 - functions and random provider
+
+In this challange you must provision an **Azure SQL Database**. You will use the Terraform [random_password provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) to generate the `administrator_login_password`. The name of the `administrator_login` must be in lowercase. To achieve that, you will use the [`lower` string Function](https://www.terraform.io/docs/language/functions/lower.html).
+
+> https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database
+
+- Run terraform init again
 
 # Ideen
 
