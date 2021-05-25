@@ -6,7 +6,7 @@
         {
             "label": "Test challenge 1",
             "type": "shell",
-            "command": "challenges/challenge-01.ps1",
+            "command": "pwsh challenges/challenge-01.ps1",
             "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
@@ -17,7 +17,7 @@
         {
             "label": "Test challenge 2",
             "type": "shell",
-            "command": "challenges/challenge-02.ps1",
+            "command": "pwsh challenges/challenge-02.ps1",
             "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
