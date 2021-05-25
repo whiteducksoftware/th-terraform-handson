@@ -60,9 +60,8 @@ terraform {
   }
 }
 
-# Todo: Change the locals
 locals {
-  initials = "mus"
+  initials = "mus" # must be lower case
   owner    = "Max Mustermann"
 }
 
@@ -72,19 +71,23 @@ provider "azurerm" {
   }
 }
 
-resource "azurerm_resource_group" "rg" {
-  name     = "rg-${local.initials}-terraform-dev"
-  location = "germanywestcentral"
+data "azurerm_resource_group" "rg" {
+  name = "rg-${local.initials}-terraform-dev"
+}
 
-  tags = {
-    "owner"   = local.owner
-    "purpose" = "Terraform workshop"
-  }
+resource "azurerm_storage_account" "stac" {
+  name                     = "${local.initials}0terraform0dev0stac"
+  resource_group_name      = data.azurerm_resource_group.rg.name
+  location                 = data.azurerm_resource_group.rg.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
 }
 
 ```
 
 Then adjust the `locals` accordingly.
+
+> 💡 Terraform is able to import existing infrastructure to bring it under Terraform management. This can be done using the `terraform import` command. In this hands-on the resource groups are precreated and we could import it using `terraform import azurerm_resource_group.rg (az group list --query "[?contains(name, '-terraform-dev')].{id:id}" --output tsv)`
 
 ### Initialize the configuration
 
@@ -120,12 +123,38 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-### Import the existing Resource Group
+### Plan the Terraform run
 
-Terraform is able to import existing infrastructure to bring it under Terraform management. In this hands-on the resource groups are precreated so we have to import them first by running the following command:
+Terraform needs to generate an execution plan before it can create infrastructure. You can generate the plan using the following command:
 
-```powershell
-terraform import azurerm_resource_group.rg (az group list --query "[?contains(name, '-terraform-dev')].{id:id}" --output tsv)
+```bash
+terraform plan
 ```
 
+Take time to look at the plan with care and understand it.
+
+### Apply the Terraform configuration
+
+If the execution plan matches our desired state, you can **apply** it using the following command:
+
+```bash
+terraform apply
+```
+
+The output shows the execution plan again and will prompt you for approval before proceeding. If everything looks fine, type `yes` at the confirmation prompt to proceed.
+
+(az storage account list --query "[?contains(name, '0terraform0dev0stac')]" | ConvertFrom-Json).Length -gt 0
+
+# Ideen
+
+IDEAS
+DATA
+OUTPUT
+INPUT
+RANDOM Provider z. b. Storage Account
+EVTL. lower function
+
 ## Bonus
+
+Migrate the State to Azure
+SQL Database + Key Vault + Connection Strings
