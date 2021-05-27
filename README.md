@@ -60,7 +60,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 2.26"
+      version = ">= 2.60.0"
     }
   }
 }
@@ -169,7 +169,7 @@ Now change the storage account `account_replication_type` from `GRS` to `LRS`.
 
 ### Plan Terraform configuration change and apply it
 
-Like before, use `terraform plan` to see the execution plan. Take your time to study it before you apply the changes using `terraform apply`!
+This time you will use `-out` parameter to write the terraform plan to a file (e. g. `terraform plan -out tf.plan`). Take your time to study the execution plan before you apply the changes using `terraform apply tf.plan`!
 
 ### Verify Challange 3
 
@@ -200,6 +200,12 @@ Verify whether you passed the fourth challenge by running the `Test challenge 4`
 In this challenge, you must provision an **Azure SQL Database**. You will use the Terraform [random_password provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) to generate the `administrator_login_password`. The name of the `administrator_login` must be in lowercase. To achieve that, you will use the [`lower` string Function](https://www.terraform.io/docs/language/functions/lower.html).
 
 > 💡 You can find an example of how to create an MS SQL Database [here.](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database)
+
+Furthermore you will deploy an **Azure KeyVault** with the name `<INITIALS>-terraform-kv` (e. g. `abc-terraform-kv`) and add two **secrets** to it:
+
+- **Name**: `dbuser` . **Value**: Name of the SQL user
+- **Name**: `dbpwd` . **Value**: The corresponding password
+  > 💡 You will need to set some permissions to _set_ the secret and _get_ it.
 
 ### Verify Challange 5
 
