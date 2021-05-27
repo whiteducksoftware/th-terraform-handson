@@ -205,7 +205,8 @@ Furthermore you will deploy an **Azure KeyVault** with the name `<INITIALS>-terr
 
 - **Name**: `dbuser` . **Value**: Name of the SQL user
 - **Name**: `dbpwd` . **Value**: The corresponding password
-  > 💡 You will need to set some permissions to _set_ the secret and _get_ it.
+
+> 💡 You will need to set some permissions to _set_ the secret and _get_ it.
 
 ### Verify Challange 5
 
